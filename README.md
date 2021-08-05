@@ -29,3 +29,9 @@ python manage.py runserver
 ```
 如遇到发表帖子的时候出现编码报错可运行目录上的Cj_Sql.py更改数据库编码
 ```
+
+
+
+![avatar](./img/主页.png)
+
+![avatar](./img/详细页.png)
