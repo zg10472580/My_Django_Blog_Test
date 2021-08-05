@@ -1,0 +1,6 @@
+Markdown==3.3.3
+django_mdeditor==0.1.18
+Django==3.2.5
+PyMySQL==0.10.0
+mdeditor==0.3.2
+pycryptodome==3.10.1
