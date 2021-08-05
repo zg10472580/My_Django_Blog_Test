@@ -1,6 +1,6 @@
 
 
-### 特点
+# 特点
 
 * markdown 渲染，代码高亮
 * 三方社会化评论系统支持(畅言)
@@ -9,9 +9,9 @@
 * 多目标源博文分享
 * 博文归档
 
-# 为了测试 我的数据库是sqlite3  各位可以在 settings.py更改你们的mysql数据库
+### 为了测试 我的数据库是sqlite3  各位可以在 settings.py更改你们的mysql数据库
 
-### 安装
+# 安装
 ```
 pip install -r requirements.txt  # 安装所有依赖
 修改setting.py配置数据库
