@@ -35,3 +35,5 @@ python manage.py runserver
 ![avatar](./img/主页.png)
 
 ![avatar](./img/详细页.png)
+
+![avatar](./img/管理员.png)
