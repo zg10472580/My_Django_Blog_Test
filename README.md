@@ -9,6 +9,8 @@
 * 多目标源博文分享
 * 博文归档
 
+# 为了测试 我的数据库是sqlite3  各位可以在 settings.py更改你们的mysql数据库
+
 ### 安装
 ```
 pip install -r requirements.txt  # 安装所有依赖
