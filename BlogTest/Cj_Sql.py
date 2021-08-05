@@ -30,19 +30,19 @@ alter database test default character set utf-8;
 
 '''
 
-conn = MySQLdb.connect(host="39.101.141.163", user="root",passwd="a04d687e2a0b807d",port=3306) #连接 MYSQL 数据库
+conn = MySQLdb.connect(host="39.1141.163", user="root",passwd="xxx",port=3306) #连接 MYSQL 数据库
 
 cursor = conn.cursor()     #获取游标
 
-cursor.execute("create database if not exists test")    #创建数据库‘blog’
+cursor.execute("create database if not exists 你的数据库")    #创建数据库 ‘ 你的数据库 ’
 
-cursor.execute("alter database test default character set utf8mb4")#修改库编码
+cursor.execute("alter database 你的数据库 default character set utf8mb4")#修改库编码
 
-cursor.execute("USE test")#选中库
+cursor.execute("USE 你的数据库")#选中库
 
-cursor.execute("alter table blog_article change content content longtext character set utf8mb4 not null")#进入库修改字段的编码
+cursor.execute("alter table 你要修改的表 change content content longtext character set utf8mb4 not null")#进入库修改字段的编码
 
-cursor.execute("alter table blog_article default character set utf8mb4")#修改表的编码
+cursor.execute("alter table 你要修改的表 default character set utf8mb4")#修改表的编码
 
 conn.commit()  # 提交数据库
 
