@@ -1,0 +1,321 @@
+{% load static %}
+<html>
+
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="referrer" content="never">
+  <meta name="viewport" content="width=device-width"/>
+ {% block title %}
+    <title>老飞机的博客</title>
+{% endblock %}
+
+{#  <link rel="stylesheet" href="{% static 'css/default.css' %}" />#}
+  <link rel="stylesheet" href="{% static 'css/public.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/font-icon.css' %}" />
+  {% block css %}
+  {% endblock %}
+ <style>
+     .sadsd{width:100%;}
+    .sadsd img{text-decoration:none;width:49%;padding:12px 0;text-align:center;display:inline-block;font-size:13px;position:relative;}
+    .sadsd b{text-decoration:none;width:49%;text-align:center;display:inline-block;font-size:13px;color:#ff1c1c}
+    .sadsd h2{text-align: center}
+</style>
+  <!--JS-->
+<script src="{% static 'js/jquery.2.1.4.min.js' %}"></script>
+ <script src="{% static 'js/my.js' %}"></script>
+ </head>
+
+
+ <body  style="display: block;">
+  <!--导航开始-->
+  <header class="myheader" style="animation: 0.5s ease 0s 1 normal none running fushang;">
+   <div class="top">
+    <!--头像左边部分-->
+    <div class="top-left" style="animation: 1s ease 0s 1 normal none running fuzuo;">
+     <div class="logo">
+      <a href="/" title=""><img src="/static/images/h.gif" alt="" /></a>
+     </div>
+     <!--滚动消息-->
+     <div class="web-xiaoxi">
+      <i class="el-speaker"></i>
+      <ul class="mulitline">
+       <li style="margin-top: -7.39189px;">公告测试</li>
+       <li style="margin-top: 0px;">喜欢的可以在github follow我</li>
+       <li style="margin-top: 0px;">老飞机的博客/li&gt; </li>
+      </ul>
+     </div>
+     <!--END 消息 -->
+     <!--手机菜单按钮-->
+     <div class="mobile-nav">
+      <i class="el-lines"></i>
+      <i class="el-remove"></i>
+     </div>
+    </div>
+    <!--电脑导航开始-->
+
+
+   <nav class="mynav">
+     <ul class="orange-text">
+      <li class="" style="animation-name: fushang; animation-duration: 0.5s;"><a href="/" title="">首页</a></li>
+      <li class="drop" style="animation-name: fushang; animation-duration: 0.833333s;"> <a href="JavaScript:;">分类<i class="el-chevron-down"></i></a>
+       <div class="drop-nav orange-text">
+        <ul>
+        </ul>
+       </div> </li>
+      <li style="animation-name: fushang; animation-duration: 1s;"><a href="/blog/archive/">归档</a></li>
+      <li style="animation-name: fushang; animation-duration: 1.16667s;"><a href="/blog/message/">留言</a></li>
+     </ul>
+
+
+
+            <div class="search ">
+              <form action="/blog/search/" method="get">
+               <div class="search-index">
+                <input name="name" type="text" autocomplete="off" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+                <i class="el-search"><input value=" " type="submit" /></i>
+               </div>
+              </form>
+             </div>
+    </nav>
+
+
+
+    <!--这里是手机导航-->
+    <div class="mob-menu">
+     <!--手机顶部搜索-->
+     <div class="search ">
+      <form action="/blog/search/" method="get">
+       <div class="search-index">
+        <input autocomplete="off"name="name" type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+        <i class="el-search"><input value=" " type="submit" /></i>
+       </div>
+      </form>
+     </div>
+     <!--手机下拉菜单-->
+     <ul style="text-align:center">
+      <li><a href="/">首页</a></li>
+      <li class="mob-drop"> <a href="JavaScript:;">分类</a>
+       <ul class="mob-dropmenu">
+
+       </ul> </li>
+      <li><a href="/blog/archive/">归档</a></li>
+      <li><a href="/blog/message/">留言</a></li>
+     </ul>
+
+
+    </div>
+
+   </div>
+   <!--换肤--->
+  </header>
+
+
+
+
+  <div class="container">
+
+
+
+     <!--底部按钮-->
+
+{#<div class="focus-me bg-color animation-div" style="animation-name: fuxiasuo; animation-duration: 1s;">#}
+
+        <div class="xiangguan">
+            <div><a class="githbu" href="/"  title="">
+                <i class="el-certificate"></i></a><span>最新发表</span></div>
+            <div><a class="benbo" href="/PaiHang" >
+                <i class="el-signal"></i></a><span>文章排行</span></div>
+            <div><a href="/tool/" class="side-fx"><i class="el-cogs"></i></a><span>在线工具</span></div>
+            <div><a class="logins" href="/login"><i class="el-reddit"></i></a><span>登录</span></div>
+            <div><a class="mail-btn" href="https://github.com/zg10472580"><i class="el-envelope"></i></a><span>订阅我</span></div>
+
+        </div>
+
+{#    </div>#}
+
+   <!--左侧开始-->
+   <section class="mysection" style="animation: 1s ease 0s 1 normal none running fuzuo;">
+
+    {% block contents %}
+    {% endblock %}
+
+   </section>
+   <!--左侧结束-->
+   <!--右侧开始-->
+  </div>
+
+<div class="cloud  animation-div" style="animation-name: fuxiasuo; animation-duration: 1.57143s;">
+        <i class="el-tags"></i>
+            <small>博客标签</small>
+
+        <ul id="3dcloud">
+
+
+        </ul>
+    </div>
+<script src="/static/js/skin.js"></script>
+<div class="select-skin">
+        <div class="skin-btn" style="animation: 0.5s ease 0s 1 normal none running zuo2;">
+            <a href="javascript:void(0);" class="skin-btn-open" title="">换<br>肤</a>
+        </div>
+
+        <div class="skin-content">
+            <h1>选择风格<span class="skin-close">关闭</span></h1>
+            <div class="skin-content-list">
+                <div class="skin-list"><a href="#" onclick="setActiveStyleSheet('moren'); return false;" class="btn1">默认</a>
+                </div>
+                <div class="skin-list"><a href="#" onclick="setActiveStyleSheet('suiji'); return false;" class="btn2">随机</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{#  <div class="sadsd" style="display: none">#}
+{#        <h2>你的支持是我最大的动力</h2>#}
+{#        <b>微信</b>#}
+{#        <b>支付宝</b>#}
+{#          <img src="/static/imga/vx.jpg">#}
+{#          <img src="/static/imga/zfb.jpg">#}
+{#</div>#}
+
+<footer>
+    <!--底部导航-->
+    <div class="foot-nav">
+        <div class="copy-right"><span>CopyRight © 2021 lfj's博客 &nbsp;&nbsp;&nbsp;     Design by lfj</span></div>
+        <div class="license bottom-nav">
+            <a href="https://beian.miit.gov.cn/">@2021 仅提供学习交流</a>
+        </div>
+    </div>
+    <div id="toTop" style="display: block;">Back to Top</div>
+</footer>
+ </body>
+
+
+<script>
+
+
+   function openWindow(obj){
+        var qq_or_weixin = "light_qq";
+
+        document.getElementById(qq_or_weixin).style.display='block';
+        document.getElementById('fade').style.display='block';
+    }
+    function closeWindow(){
+        document.getElementById('light_qq').style.display='none';
+        document.getElementById('fade').style.display='none';
+    }
+
+
+
+
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+     return unescape(arr[2]);
+    else {
+        return null;
+    }
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+if (getCookie("name")){
+    document.getElementsByClassName("logins")[0].setAttribute ("href" , "#");
+    $('.logins').next().html("下线")
+    document.getElementsByClassName("logins")[0].getElementsByTagName('i')[0].className = "el-blind";
+    document.getElementsByClassName("mulitline")[0].getElementsByTagName('li')[0].innerHTML = "欢迎回来："+getCookie("name");
+
+    $(".logins").on('click',function(){
+        setCookie("name", "", -1);
+        setCookie("d", "", -1);
+        setCookie("e", "", -1);
+        location.href = '/'
+    });
+}
+
+     window.onload = function (){
+        $.ajax({
+            type: "GET",
+            url: "/Get_Fenlei/?tp=Fenlei",
+            success: function (res) {
+                html = ""
+                html2 = ""
+                result = res.split("||")
+                for (i=0 ; i < result.length -1; i++){
+                    html += '<li><a href="/blog/category/'+result[i]+'">'+result[i]+'</a></li>'
+                    html2 += '<li><a href="/blog/category/'+result[i]+'">'+result[i]+'</a></li>'
+                }
+                $(".drop-nav ul").append(html);
+                $(".mob-dropmenu").append(html2);
+                },
+        });
+
+
+        $.ajax({
+            type: "GET",
+            url: "/Get_Fenlei/?tp=Tag",
+            success: function (res) {
+                html2 = ""
+                result = res.split("||")
+                for (i=0 ; i < result.length -1; i++){
+                    html2 += '<li><a href="/blog/Ret_Tag/'+result[i]+'">'+result[i]+'</a></li>'
+                }
+                $("#3dcloud").append(html2);
+                },
+        });
+    }
+
+setActiveStyleSheet(getCookie("bzs"));
+var browser = {
+    versions: function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {         //移动终端浏览器版本信息
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+            iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+        };
+    }(),
+    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+}
+if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面
+    var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        document.getElementsByTagName("header")[0].style.position = "static";
+        //在微信中打开
+    }
+    if (ua.match(/WeiBo/i) == "weibo") {
+        //在新浪微博客户端打开
+            document.getElementsByTagName("header")[0].style.position = "static";
+
+    }
+    if (ua.match(/QQ/i) == "qq") {
+        document.getElementsByTagName("header")[0].style.position = "static";
+        //在QQ空间打开
+    }
+    if (browser.versions.ios) {
+          document.getElementsByTagName("header")[0].style.position = "static";
+      //是否在IOS浏览器打开
+    }
+    if(browser.versions.android){
+        //是否在安卓浏览器打开
+        document.getElementsByTagName("header")[0].style.position = "static";
+    }
+}else{
+    //否则就是PC浏览器打开
+}
+</script>
+</html>

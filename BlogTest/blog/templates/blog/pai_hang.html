@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+
+ {% block title %}
+    <title>{{ ab_title }}</title>
+{% endblock %}
+
+
+{% block css %}
+<style>
+.minVideoViewBox {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;/* 火狐 */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+.miniStreamView{
+    width:auto;
+    height:auto;
+    display: inline-block;
+    margin:6px;
+
+}</style>
+{% endblock %}
+
+ {% block contents %}
+      {% if  ndex_title%}
+         <h4 class="index-title">
+                <a href="/"><i class="{{ ndex_title.iso }}"></i> {{ ab_title }}&nbsp;&nbsp;<i class="el-magic"></i> &nbsp;&nbsp;</a>
+                <span class="orange-text">{{ ndex_title.name }}</span>
+                <span style="float:right;margin-right:10px;">
+                    共有:<a class="orange-text"> {{ ndex_title.ins }} </a>篇</span>
+         </h4>
+
+    {% endif %}
+
+     <div class="arclist">
+    <ul>
+        {% for blog in blog_list %}
+
+            {% if id %}
+                <li id="{{ id }}">
+            {% else %}
+                <li {% if blog.view > 1000 %} id="tuijian" {% elif article.view > 500 %} id="Hot" {% endif %}>
+            {% endif %}
+        <div class="arcimg">
+            <img src="{{ blog.picture }}"
+                 alt="{{ blog.title }}" title="{{ blog.title }}"/>
+        </div>
+            <div class="arc-right">
+            <h4 class="blue-text"><a href="/blog/detail/{{ blog.id }}"
+                                     title="{{ blog.title }}">{{ blog.title }}</a></h4>
+            <p>{{ blog.digest }}</p>
+            <div class="minVideoViewBox">
+                     <div class="miniStreamView"><a title="已有 {{ blog.view }} 次浏览"><i class="el-eye-open"></i>{{ blog.view }}</a></div>
+                    <div class="miniStreamView"><a title="发布于 {{ blog.date_time }}  "><i
+                        class="el-time"></i> {{ blog.date_time }}</a></div>
+                <div class="miniStreamView"><a href="/blog/Ret_author/{{ blog.author }}"><i class="el-user"></i>{{ blog.author }}</a>
+                </div>
+{#                <div class="miniStreamView"><a title="已有 {{ blog.comment }} 条评论"><i class="el-comment"></i>{{ blog.comment }}</a></div>#}
+                {% for tag in blog.tag.values %}
+                    <div class="mob-hidden miniStreamView" >
+                        <a title="标签: {{ tag.tag_name }}" href="/blog/Ret_Tag/{{ tag.tag_name }}{#% url "blog:tag" tag.tag_name %#}"><i class="el-tag"></i>{{ tag.tag_name }}</a>&nbsp;
+                    </div>
+                {% endfor %}
+                <div class="mob-hidden miniStreamView"><a href="/blog/category/{{ blog.category }}" title="查看分类"><i class="el-th-list">{{ blog.category }}</i></a></div>
+            </div>
+        </div>
+        </li>
+
+
+        {% endfor %}
+    </ul>
+</div>
+
+{#    {% include "blog/blog_list.html" with blogs=blog_list %}#}
+{% endblock %}
