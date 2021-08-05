@@ -1,6 +1,6 @@
 *.js linguist-language=Python
-*.css linguist-language=Python
-*.html linguist-language=Python
+*.css linguist-language=Django
+*.html linguist-language=blog
 
 *.js linguist-language=Django
 *.css linguist-language=Django
