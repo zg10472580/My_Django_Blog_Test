@@ -19,7 +19,11 @@ pip install -r requirements.txt  # 安装所有依赖
 畅言js位置: 进入工作台-》通用设置-》填好 网站基本信息 》回到 》 后台总览 》复制APPID APPSECRET到message.html中
 python manage.py makemigrations blog
 python manage.py migrate
+创建管理员账号
+python manage.py createsuperuser
 python manage.py runserver
+
+
 ```
 
 ### 示例博客：<http://39.101.141.163:889>
