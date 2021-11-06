@@ -28,6 +28,7 @@ python manage.py runserver
 
 ### 示例博客：<http://110.42.177.170>
 
+### 下载地址：<https://github.com/zg10472580/My_Django_Blog_Test/releases/tag/%E4%BB%A3%E7%A0%81>
 
 # 注意 
 ```
