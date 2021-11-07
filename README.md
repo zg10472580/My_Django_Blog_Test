@@ -51,6 +51,7 @@ python manage.py runserver
 这个错误主要是发表帖子存在表情符号
 ```
 
+#后续会完善评论功能 以及留言
 
 
 ![avatar](./img/主页.png)
