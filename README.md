@@ -10,6 +10,21 @@
 * 博文归档
 
 ### 为了测试 我的数据库是sqlite3  各位可以在 settings.py更改你们的mysql数据库
+```
+ 'default': {
+        # 配置mysql数据库，使用sqlite3的 跳过此步骤无需配置
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'ctango',  # 数据库名，自己本地创建
+        'USER': 'root',  # 数据库用户名
+        'PASSWORD': 'root',  # 数据库密码
+        'HOST': '127.0.0.1',  #MySQL服务所在主机IP
+        'PORT': '3306',  # MySQL服务端口
+    }
+
+```
+
 
 # 安装
 ```
